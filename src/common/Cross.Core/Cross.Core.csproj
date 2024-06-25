@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Cross</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup Label="Juice">
+    <PackageReference Include="Juice" Version="$(JuiceRefVersion)" />
+  </ItemGroup>
+</Project>

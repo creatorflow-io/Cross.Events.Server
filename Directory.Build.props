@@ -1,0 +1,44 @@
+<Project>
+  <PropertyGroup Label="Product Infomation">
+    <Company>Cross</Company>
+    <Product>TCP Server</Product>
+    <Copyright>© $(Company). All rights reserved.</Copyright>
+    <Authors>$(Company)</Authors>
+    <Description>$(Product) - Tcp Events Handler.</Description>
+    <PackageTags>$(PackageTags); $(Company); $(Product);</PackageTags>
+    <PackageIconUrl>https://avatars.githubusercontent.com/u/107674950</PackageIconUrl>
+    <RepositoryUrl>https://github.com/creatorflow-io/Cross.TcpServer</RepositoryUrl>
+    
+    <VersionPrefix>7.0.3</VersionPrefix>
+    <VersionSuffix>local.$([System.DateTime]::Now.ToString(`yyyyMMdd`)).1</VersionSuffix>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Versioning">
+    <LibraryTargetFramework>netstandard2.1</LibraryTargetFramework>
+    <AppTargetFramework>net6.0;net8.0</AppTargetFramework>
+    <MicrosoftExtensionsVersion>8.0.*</MicrosoftExtensionsVersion>
+    <EFVersion>7.0.*</EFVersion>
+    <NpgsqlVersion>7.0.11</NpgsqlVersion>
+    <MongoVersion>2.26.0</MongoVersion>
+    <GrpcVersion>2.57.0</GrpcVersion>
+    <ProtobufVersion>3.24.3</ProtobufVersion>
+    <MediatRVersion>12.1.1</MediatRVersion>
+    <RedisVersion>2.6.122</RedisVersion>
+    <JuiceRefVersion Condition="$(JuiceRefVersion)==''">7.0.3-beta.*</JuiceRefVersion>
+    <FinbuckleVersion>6.12.0</FinbuckleVersion>
+    <SwashbuckleVersion>6.5.0</SwashbuckleVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Build">
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <EnableSourceLink>false</EnableSourceLink>
+    <BaseIntermediateOutputPath>$(SolutionDir)/build/obj/$(MSBuildProjectName)</BaseIntermediateOutputPath>
+    <OutputPath>$(SolutionDir)/build/bin/$(Configuration)/$(MSBuildProjectName)</OutputPath>
+    <PackageLocation>$(SolutionDir)build/publish/$(Configuration)/</PackageLocation>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+</Project>

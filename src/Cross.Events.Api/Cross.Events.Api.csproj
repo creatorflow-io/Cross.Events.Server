@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\common\Cross.AspNetCore\Cross.AspNetCore.csproj" />
+    <ProjectReference Include="..\common\Cross.MongoDB\Cross.MongoDB.csproj" />
+    <ProjectReference Include="..\common\Cross.TcpServer.Core\Cross.TcpServer.Core.csproj" />
+    <ProjectReference Include="..\Cross.Events.Abstractions\Cross.Events.Abstractions.csproj" />
+    <ProjectReference Include="..\Cross.Events.Api.Contracts\Cross.Events.Api.Contracts.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup Label="Juice">
+    <PackageReference Include="Juice.AspNetCore" Version="$(JuiceRefVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Label="M$">
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.19.1" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="$(MicrosoftExtensionsVersion)" />
+  </ItemGroup>
+
+</Project>

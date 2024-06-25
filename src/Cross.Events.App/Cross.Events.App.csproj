@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4fc4a86a-ceea-447c-bde5-d53629081953</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup Label="M$">
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+  </ItemGroup>
+
+  <ItemGroup Label="Juice">
+    <PackageReference Include="Juice.BgService" Version="$(JuiceRefVersion)" />
+    <PackageReference Include="Juice.BgService.Api" Version="$(JuiceRefVersion)" />
+    <PackageReference Include="Juice.Extensions.Logging.File" Version="$(JuiceRefVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\common\Cross.TcpServer.Core\Cross.TcpServer.Core.csproj" />
+    <ProjectReference Include="..\Cross.Events.Api\Cross.Events.Api.csproj" />
+  </ItemGroup>
+
+</Project>
