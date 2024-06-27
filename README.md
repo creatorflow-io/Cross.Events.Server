@@ -2,7 +2,7 @@
 
 ## Startup
 
-### Start the Identity Authorization Server
+### Start the Identity Authorization Server - Port 10001
 
 Start the `src/Cross.Identity.Auth.App` project with the `https` profile. This project provide the authorization service on port `10001`.
 
@@ -29,7 +29,7 @@ In the first time, you may need to start the IdentityServer project with `/seed`
 Currently, only the User and Role data are stored in the MongoDB, the identityserver configuration data is stored in the `Config.cs` file.
 
 
-### Start the Identity Admin API
+### Start the Identity Admin API - Port 11001
 
 Start the `src/Cross.Identity.Admin.App` project with the `https` profile. This project provide the admin API to manage the identity data on port `11001`.
 ```json
@@ -49,7 +49,7 @@ Start the `src/Cross.Identity.Admin.App` project with the `https` profile. This 
   },
 }
 ```
-### Start the TCP server
+### Start the TCP server - Port 12001 and 13001
 
 Start the `src/Cross.TcpServer.App` project with the `https` profile. 
 This project provides: 
@@ -60,7 +60,7 @@ This project provides:
 
 Run the test/Cross.TcpClient.Console project.
 
-### Run the web client
+### Run the web client - Port 4200
 
 Run the Angular project in the separated repository [tcpevents-client](https://github.com/creatorflow-io/cross-events-client) on port `4200`
 
