@@ -4,7 +4,7 @@
 
 ### Start the Identity Authorization Server
 
-Start the `src/Cross.Identity.App` project with the `https` profile. This project provide the authorization service on port `10001`.
+Start the `src/Cross.Identity.Auth.App` project with the `https` profile. This project provide the authorization service on port `10001`.
 
 In the first time, you may need to start the IdentityServer project with `/seed` argument to seeding identity data by un-comment the commandLineArgs option in `launchSettings.json`.
 
@@ -25,6 +25,9 @@ In the first time, you may need to start the IdentityServer project with `/seed`
   },
 }
 ```
+
+Currently, only the User and Role data are stored in the MongoDB, the identityserver configuration data is stored in the `Config.cs` file.
+
 
 ### Start the Identity Admin API
 
