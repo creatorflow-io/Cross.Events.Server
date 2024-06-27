@@ -36,7 +36,7 @@ namespace Cross.MongoDb.Test
 					.AddConfiguration(configuration.GetSection("Logging"));
 				});
 
-				services.AddMongoRepository<TcpEvent, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options));
+				services.AddMongoRepository<TcpEvent, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options), default);
 
 				services.AddMediatR(options => {
 					options.RegisterServicesFromAssembly(typeof(RepositotyTests).Assembly);
@@ -58,7 +58,7 @@ namespace Cross.MongoDb.Test
 			var result = await repository.GetByIdAsync(tcpEvent.Id);
 			Assert.NotNull(result);
 
-			tcpEvent.Process();
+			tcpEvent.Process(default);
 			await repository.UpdateAsync(tcpEvent);
 
 			sharedService.EventHandlers.Should().Contain(nameof(TcpEventProcessDomainEventHandler));

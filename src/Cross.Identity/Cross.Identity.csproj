@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup Label="M$">
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="$(MicrosoftExtensionsVersion)" />
+  </ItemGroup>
+  
+  <ItemGroup Label="3rd">
+    <PackageReference Include="MongoDB.Bson" Version="$(MongoVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\common\Cross.Core\Cross.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -15,9 +15,9 @@ namespace Cross.Events.Api
 	{
 		public override void ConfigureServices(IServiceCollection services, IMvcBuilder mvc, IWebHostEnvironment env, IConfiguration configuration)
 		{
-			services.AddMongoRepository<TcpEvent, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options));
+			services.AddMongoRepository<TcpEvent, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options), "events");
 
-			services.AddMongoRepository<TcpClient, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options));
+			services.AddMongoRepository<TcpClient, string>(options => configuration.GetSection("Cross:MongoDb").Bind(options), "events");
 
 			services.AddTcpServerMediatorBehaviors();
 
@@ -25,7 +25,6 @@ namespace Cross.Events.Api
 
 			services.AddEventsAuthorizationDefault();
 
-			services.AddHttpContextAccessor();
 		}
 
 		public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IWebHostEnvironment env)

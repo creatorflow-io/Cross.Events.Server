@@ -37,7 +37,9 @@ namespace Cross.Events.App.Modules
 
 			services.AddSignalR();
 
-			services.AddWebPushService(configuration.GetSection("Cross:WebPush"), options => {
+            services.AddHttpContextAccessor();
+
+            services.AddWebPushService(configuration.GetSection("Cross:WebPush"), options => {
 				configuration.GetRequiredSection("Cross:MongoDB").Bind(options);
 			});
 

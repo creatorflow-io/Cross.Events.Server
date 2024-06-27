@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Cross.Events.MongoDB;
 using MongoDB.Driver.Linq;
 using Cross.AspNetCore;
-using MediatR;
 using Juice;
 using MongoDB.Driver;
 using Cross.Events.Api.Controllers.Clients.Models;
@@ -16,7 +15,7 @@ using Juice.Domain;
 namespace Cross.Events.Api.Controllers.Clients
 {
     [ApiController]
-    [Route("api/clients")]
+    [Route("api/client")]
     [ApiExplorerSettings(GroupName = "tcpevents")]
     [IgnoreAntiforgeryToken]
     [Authorize(Policies.ClientContributePolicy)]
@@ -29,7 +28,7 @@ namespace Cross.Events.Api.Controllers.Clients
         }
 
         /// <summary>
-        /// Query TcpEvents
+        /// Query TcpClients
         /// NOTE: SwaggerUI currently does not build query params correctly for array of objects, so I have to use POST to test easily.
         /// I expected a query string like this for Sorts array: sorts[0].Property=Name
         /// </summary>

@@ -11,6 +11,7 @@
 
   <ItemGroup Label="3rd">
     <PackageReference Include="Lib.Net.Http.WebPush" Version="3.2.1" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
   </ItemGroup>
   
   <ItemGroup>

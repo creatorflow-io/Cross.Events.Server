@@ -3,14 +3,13 @@ using Lib.Net.Http.WebPush;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Versioning;
-using System.Threading.Tasks;
 
 namespace Cross.AspNetCore.WebPush.Controllers
 {
     [Route("push-notifications-api")]
     [Authorize(Policies.Authenticated)]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "webpush")]
     public class PushNotificationsApiController : ControllerBase
     {
         private readonly IPushNotificationService _notificationService;

@@ -1,4 +1,5 @@
-﻿using Juice.BgService.Api;
+﻿using Cross.AspNetCore;
+using Juice.BgService.Api;
 using Juice.Extensions.Swagger;
 using Juice.Modular;
 using Microsoft.OpenApi.Models;
@@ -63,13 +64,13 @@ namespace Cross.Events.App.Modules
 
 		public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IWebHostEnvironment env)
 		{
-			app.UseSwagger(options => options.RouteTemplate = "api/swagger/{documentName}/swagger.json");
+			app.UseSwagger(options => options.RouteTemplate = "swagger/{documentName}/swagger.json");
 			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("tcpevents/swagger.json", "Tcp Events API");
 				c.SwaggerEndpoint("bgservice/swagger.json", "Background Service API");
 
-				c.RoutePrefix = "api/swagger";
+				c.RoutePrefix = "swagger";
 
 				c.OAuthClientId("events_api_swaggerui");
 				c.OAuthAppName("Events API Swagger UI");

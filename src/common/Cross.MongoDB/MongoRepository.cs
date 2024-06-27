@@ -1,5 +1,4 @@
-﻿using Cross.Attibutes;
-using Cross.MongoDB;
+﻿using Cross.MongoDB;
 using Juice.Domain;
 using MediatR;
 using MongoDB.Driver;
@@ -11,8 +10,8 @@ namespace Cross.Events.MongoDB
 		where TKey : IEquatable<TKey>
 		where T : class, IIdentifiable<TKey>
 	{
-		private readonly IMediator _mediator;
-		public MongoRepository(IMongoDatabase database, IMediator mediator): base(database)
+		private readonly IMediator? _mediator;
+		public MongoRepository(IMongoDatabase database, IMediator? mediator = default): base(database)
 		{
 			_database = database;
 			_mediator = mediator;
@@ -20,7 +19,7 @@ namespace Cross.Events.MongoDB
 		
 		private async Task PublishDomainEventsAsync(T entity)
 		{
-			if (entity is IAggregateRoot<INotification> aggregate)
+			if (entity is IAggregateRoot<INotification> aggregate && _mediator!=null)
 			{
 				var domainEvents = aggregate.DomainEvents;
 				foreach (var domainEvent in domainEvents)
@@ -33,11 +32,17 @@ namespace Cross.Events.MongoDB
 
 		private async Task PublishDataInsertedEventAsync(T entity)
 		{
-			await _mediator.Publish(new DataInserted<T>(entity));
+			if (_mediator != null)
+			{
+				await _mediator.Publish(new DataInserted<T>(entity));
+			}
 		}
 		private async Task PublishDataDeletedEventAsync(T entity)
 		{
-			await _mediator.Publish(new DataDeleted<T>(entity));
+			if (_mediator != null)
+			{
+				await _mediator.Publish(new DataDeleted<T>(entity));
+			}
 		}
 
 		public async Task InsertAsync(T entity)

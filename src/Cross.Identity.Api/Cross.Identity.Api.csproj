@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cross.Identity.Api.Contracts\Cross.Identity.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Cross.Identity.MongoDB\Cross.Identity.MongoDB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="Juice">
+    <PackageReference Include="Juice.AspNetCore" Version="$(JuiceRefVersion)" />
+  </ItemGroup>
+
+</Project>

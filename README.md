@@ -2,6 +2,29 @@
 
 ## Startup
 
+### Start the IdentityServer
+
+Start the src/Cross.Identity.App project with the `https` profile.
+In the first time, you may need to start the IdentityServer project with `/seed` argument to seeding identity data by un-comment the commandLineArgs option in `launchSettings.json`.
+
+```json
+// launchsettings.json
+{
+  "profiles": {
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      //"commandLineArgs": "/seed",  // Seeding identity data
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:10001"
+    },
+  },
+}
+```
+
 ### Start the server
 
 Start the src/Cross.TcpServer.App project with the `https` profile.

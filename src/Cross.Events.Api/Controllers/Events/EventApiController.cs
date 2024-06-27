@@ -16,7 +16,7 @@ using Cross.Events.Api.Controllers.Events.Models;
 namespace Cross.Events.Api.Controllers.Events
 {
     [ApiController]
-    [Route("api/events")]
+    [Route("api/event")]
     [ApiExplorerSettings(GroupName = "tcpevents")]
     [IgnoreAntiforgeryToken]
     public class EventApiController : ControllerBase

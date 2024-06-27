@@ -15,9 +15,8 @@ namespace Cross.Events.App.Modules
 				.AddJwtBearer(
 					options =>
 					{
-						options.Authority = configuration.GetSection("OpenIdConnect:Authority").Get<string>();
-						options.Audience = configuration.GetSection("OpenIdConnect:Audience").Get<string?>();
-						options.RequireHttpsMetadata = false;
+						configuration.GetSection("OpenIdConnect").Bind(options);
+						configuration.GetSection("OpenIdConnect.TokenValidationParameters").Bind(options.TokenValidationParameters);
 					}
 				);
 

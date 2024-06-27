@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31EA8B57-4893-42A3-9EAD-E668AC574928}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.TcpClient.Console", "test\Cross.TcpClient.Console\Cross.TcpClient.Console.csproj", "{33C4CFAF-1C5E-41A8-A46D-17880041883D}"
@@ -18,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Events.Abstractions",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{7B2106B2-FD9A-4DCC-A1D8-D188AE32C771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cross.MongoDb.Test", "test\Cross.MongoDb.Test\Cross.MongoDb.Test.csproj", "{99B458A5-FD07-4A40-8FDA-2DECD3D3E97A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.MongoDb.Test", "test\Cross.MongoDb.Test\Cross.MongoDb.Test.csproj", "{99B458A5-FD07-4A40-8FDA-2DECD3D3E97A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Core", "src\common\Cross.Core\Cross.Core.csproj", "{61CD4EEB-815F-490E-A7F5-7D2CEBA69ECC}"
 EndProject
@@ -32,7 +33,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Events.Api.Contracts"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Events.App", "src\Cross.Events.App\Cross.Events.App.csproj", "{2F7FA58F-F0EB-407C-AFC5-44B54E1F07FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cross.AspNetCore", "src\common\Cross.AspNetCore\Cross.AspNetCore.csproj", "{8AFE4194-F366-454E-B78E-2FE70FF2C883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.AspNetCore", "src\common\Cross.AspNetCore\Cross.AspNetCore.csproj", "{8AFE4194-F366-454E-B78E-2FE70FF2C883}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity", "src\Cross.Identity\Cross.Identity.csproj", "{5B1260AA-00A3-4B19-A0BD-33398B570EEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity.MongoDB", "src\Cross.Identity.MongoDB\Cross.Identity.MongoDB.csproj", "{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity.Test", "test\Cross.Identity.Test\Cross.Identity.Test.csproj", "{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity.Api", "src\Cross.Identity.Api\Cross.Identity.Api.csproj", "{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity.Api.Contracts", "src\Cross.Identity.Api.Contracts\Cross.Identity.Api.Contracts.csproj", "{2720E487-12C4-42FF-A79B-0EBAA2CD6766}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cross.Identity.Auth.App", "src\Cross.Identity.Auth.App\Cross.Identity.Auth.App.csproj", "{9E476F1B-4214-443C-968F-42479CA0B79C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cross.Identity.Admin.App", "src\Cross.Identity.Admin.App\Cross.Identity.Admin.App.csproj", "{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +95,34 @@ Global
 		{8AFE4194-F366-454E-B78E-2FE70FF2C883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFE4194-F366-454E-B78E-2FE70FF2C883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AFE4194-F366-454E-B78E-2FE70FF2C883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B1260AA-00A3-4B19-A0BD-33398B570EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B1260AA-00A3-4B19-A0BD-33398B570EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B1260AA-00A3-4B19-A0BD-33398B570EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B1260AA-00A3-4B19-A0BD-33398B570EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2720E487-12C4-42FF-A79B-0EBAA2CD6766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2720E487-12C4-42FF-A79B-0EBAA2CD6766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2720E487-12C4-42FF-A79B-0EBAA2CD6766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2720E487-12C4-42FF-A79B-0EBAA2CD6766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E476F1B-4214-443C-968F-42479CA0B79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E476F1B-4214-443C-968F-42479CA0B79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E476F1B-4214-443C-968F-42479CA0B79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E476F1B-4214-443C-968F-42479CA0B79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +139,13 @@ Global
 		{458DBD08-97DF-4853-8407-95B7F9A01CFF} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
 		{2F7FA58F-F0EB-407C-AFC5-44B54E1F07FA} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
 		{8AFE4194-F366-454E-B78E-2FE70FF2C883} = {7B2106B2-FD9A-4DCC-A1D8-D188AE32C771}
+		{5B1260AA-00A3-4B19-A0BD-33398B570EEC} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
+		{DAC99145-10B7-4A3A-B0E9-B148DADF5AE7} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
+		{B3C7546D-C131-4AB8-A1E0-AC4AE81D43B7} = {DB39C497-E15B-40CE-B93E-ED1FF9D6CC32}
+		{9E72C976-B23C-4FB0-9EC5-F3DC73F53D08} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
+		{2720E487-12C4-42FF-A79B-0EBAA2CD6766} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
+		{9E476F1B-4214-443C-968F-42479CA0B79C} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
+		{D9CCBD2B-4C32-4767-B5D0-DDFFE4A0CE5D} = {8A738CF1-7ACC-4225-9EAD-37172D5F616B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E53DDC0-1585-4A27-84F6-E6AF66061CBC}

@@ -4,7 +4,6 @@ using Cross.AspNetCore.WebPush.Models;
 using Juice.Extensions.Logging;
 using Juice.Modular;
 using Lib.Net.Http.WebPush;
-using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 

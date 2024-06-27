@@ -2,7 +2,7 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Cross.Events.App
+namespace Cross.AspNetCore
 {
 	public class QueryArramParamFilter : IParameterFilter
 	{

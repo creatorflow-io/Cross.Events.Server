@@ -9,17 +9,17 @@ EXPOSE 13001
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Cross.TcpServer.App/Cross.TcpServer.App.csproj", "src/Cross.TcpServer.App/"]
-RUN dotnet restore "./src/Cross.TcpServer.App/Cross.TcpServer.App.csproj"
+COPY ["src/Cross.Events.App/Cross.Events.App.csproj", "src/Cross.Events.App/"]
+RUN dotnet restore "./src/Cross.Events.App/Cross.Events.App.csproj"
 COPY . .
-WORKDIR "/src/src/Cross.TcpServer.App"
-RUN dotnet build "./Cross.TcpServer.App.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/Cross.Events.App"
+RUN dotnet build "./Cross.Events.App.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Cross.TcpServer.App.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Cross.Events.App.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Cross.TcpServer.App.dll"]
+ENTRYPOINT ["dotnet", "Cross.Events.App.dll"]

@@ -7,8 +7,8 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class TcpEventApiServiceCollectionExtensions
     {
 		/// <summary>
-		/// Configure SwaggerGen for Background Service
-		/// <para>tcpevents-v1</para>
+		/// Configure SwaggerGen for Events API
+		/// <para>tcpevents</para>
 		/// </summary>
 		/// <param name="services"></param>
 		/// <returns></returns>
