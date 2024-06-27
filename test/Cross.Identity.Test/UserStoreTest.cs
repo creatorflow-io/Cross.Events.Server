@@ -54,9 +54,9 @@ namespace Cross.Identity.Test
 			if (user != null)
 			{
 				var roles = await userManager.GetRolesAsync(user);
-				if (!roles.Any())
+				if (!roles.Contains("test"))
 				{
-					await userManager.AddToRolesAsync(user, new string[] { "test" , "admin"});
+					await userManager.AddToRolesAsync(user, new string[] { "test"});
 					var isInRole = await userManager.IsInRoleAsync(user, "test");
 					Assert.True(isInRole);
 					roles = await userManager.GetRolesAsync(user);
