@@ -84,7 +84,7 @@ namespace Cross.TcpClient.Console
 			using var _ = _logger.BeginScope($"Send {count} messages in parallel");
 			Parallel.For(0, count, async i =>
 			{
-				await SendAsync(new TcpMessage(DateTimeOffset.Now, $"Message {i} from client"));
+				await SendAsync(new TcpMessage(DateTimeOffset.Now, $"{_idGenerator.GenerateRandomId(6)} Message {i} from client"));
 			});
 			return Task.CompletedTask;
 		}
