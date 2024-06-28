@@ -1,9 +1,11 @@
-﻿using Cross.Identity.Api.Services;
+﻿using Cross.Events.MongoDB;
+using Cross.Identity.Api.Services;
 using FluentAssertions;
 using Juice.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
 using Xunit.Abstractions;
 
 namespace Cross.Identity.Test
@@ -56,7 +58,7 @@ namespace Cross.Identity.Test
             userDatasource.Data.Count.Should().Be((int)userDatasource.Count);
         }
 
-        [Fact(DisplayName = "User records == 3 without query")]
+        [Fact(DisplayName = "User records without query")]
 
         public async Task Users_count_should_e3Async()
         {
@@ -81,12 +83,18 @@ namespace Cross.Identity.Test
 
             using var scope = resolver.ServiceProvider.CreateScope();
             var userViewService = scope.ServiceProvider.GetRequiredService<UserViewService>();
+            var repo = scope.ServiceProvider.GetRequiredService<MongoRepository<ApplicationUser, Guid>>();
 
-            var userDatasource = await userViewService.GetDatasourceResultAsync(new Juice.AspNetCore.Models.DatasourceRequest
+            var count = await repo.GetCollection().CountDocumentsAsync(FilterDefinition<ApplicationUser>.Empty);
+            var request = new Juice.AspNetCore.Models.DatasourceRequest
             {
-            });
+            };
 
-            userDatasource.Count.Should().Be(3);
+            var userDatasource = await userViewService.GetDatasourceResultAsync(request);
+
+            var expectedCount = Math.Min(count, request.PageSize);
+
+            userDatasource.Count.Should().Be(expectedCount);
 
             userDatasource.Data.Count.Should().Be((int)userDatasource.Count);
         }
